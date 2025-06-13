@@ -53,10 +53,20 @@
 - `lsblk` -> what storage devices exist (even if not mounted)
 
 ## 6.5 Using Links
-- Links are pointers to files in a different location
-- Compare to shortcuts on other operating systems
-- Links can be useful to make the same file available on multiple locations
-- Create hard links with `ln` and symbolic links with `ln -s`
+- Links let you reference the same file from multiple locations like "shortcuts" in other operating systems.
+- **Hard links**
+    - Point directly to the file's inode on disk
+    - All hard links are equal, deleting one does not remove the data as long ass another hard link remains.
+    - Cannot span different filesystems or link to directories (without special flags)
+        - `ln /path/to/target/file hardlink`
+        - `ls -li /path/to/target/file hardlink`
+- **Symolic (soft) links**
+    - Store a pathname that points to the target file or directory
+    - Can cross filesystem boundaries and link to directories
+    - If the target is removed, the symlink becomes "broken"
+        - `ln -s /path/to/target/file softlink`
+        - `ls -li /path/to/target/file softlink`
+
 
 ## 6.6 Archiving Files
 - `tar` is the Tape Archiver and was created a long time ago
@@ -77,3 +87,8 @@
     - `bzip2 (-j)` is an alternative utility
     - `zip` is also available and has Windows-compatible syntax
     - `xz (-J)` is showing up more often as well
+
+## Lesson 6 Lab: Managing Files
+- Use `tar` to create a compressed archive of all files in the /etc and /opt directories. Write this archive to your home directory
+- Create a symbolic link to the archive you've just created in the /tmp directory
+- Remove the archive from your home directory. What happens to the symbolic link?
