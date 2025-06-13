@@ -62,13 +62,13 @@ awk -F : '{print $NF}' /etc/passwd
 ```
 
 ## 7.5 Using `sed`
-- `sed` is a stream editor, used ot search and transform text
+- `sed` is a stream editor, used to search and transform text
 - It can be used to search for text, and perform an operation on matching text
 - Examples:
 ```bash
 sed -n 5p /etc/passwd
-sed -i s/old/new/g ~/myfile
-sed -i -e '2d' ~myfile
+sed -i s/old/new/g myfile
+sed -i -e '2d' myfile
 ```
 
 ## Lesson 7 Lab: Working with Text Files
