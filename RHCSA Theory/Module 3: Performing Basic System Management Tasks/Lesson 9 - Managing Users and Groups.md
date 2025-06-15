@@ -18,10 +18,10 @@
 - Shell: the program that will be started after successful authentication
 
 ## 9.3 Creating and Managing Users
-- useradd: create user accounts
-- usermod: modify user accounts
-- uderdel: delete uder accounts
-- passwd: set passwords
+- `useradd`: create user accounts
+- `usermod`: modify user accounts
+- `uderdel`: delete uder accounts
+- `passwd`: set passwords
 
 ## 9.4 Defining User Default Settings
 - `useradd -D`: Show or set `useradd`'s own defaults (shell, home directory base, group, etc.)
