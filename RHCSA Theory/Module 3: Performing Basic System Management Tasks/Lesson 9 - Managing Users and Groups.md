@@ -24,35 +24,37 @@
 - passwd: set passwords
 
 ## 9.4 Defining User Default Settings
-- Use `useradd -D` to specify default settings
-- Settings in /etc/default/useradd apply to `sueradd` only
-- Alternative, write default settings to /etc/login.defs
-- Files in /etc/skel are created to the user home directory upon creation
+- `useradd -D`: Show or set `useradd`'s own defaults (shell, home directory base, group, etc.)
+- `/etc/default/useradd`: The config file `useradd` reads for its defaults
+- `/etc/login.defs`: Global login and password policies (aging, UID/GID, ranges) for all account tools.
+`/etc/skel`: Files here are copied into every new user's home directory
 
 ## 9.5 Limiting User Access
-- User accounts can be temporarily locked
-    - `usermod -L anna` will lock anna
-    - `usermod -U anna` will unlock anna
-- User accounts can be set to expire also
-    - `usermod -e 2032-01-01 bill` expires user account bill on 01-01-2023
-- Set /sbin/nologin as the shell for users that are not intended to log in at all
-    - `usermod -s /sbin/nologin myapp`
-   - `usermod -aG profs anna` 
+- `usermod -L anna` to lock an account
+- `usermod -U anna` to unlock an account
+- `usermod -e YYYY-MM-DD` to set expiration for an account
+- `usermod -s /sbin/nologin <username>`
+- `usermod -aG profs anna`
 
 ## 9.6 Managing Group Membership
-- Each user must be a member of at least one group
-- Primary Group Membership is managed through /etc/password
-- The user primary group becomes group-owner if a user creates a file
-- Additional (secondary) groups can be defined as well
-- Secondary Group Membership is managed through /etc/groups
-- Temporarily set primary group membership using `newgrp`
-- Use `id` see which groups a user is a member of
+- Every user needs >= group
+- Primary groups
+    - Defined in `/etc/passwd`
+    - Becomes the group-owner of files
+- Secondary groups
+    - Listed in `/etc/group`
+    - Grant extra permissions
+- Change primary group temporarily
+    - `newgrp groupname`
+- Show a user's groups
+    - `id username`
 
 ## 9.7 Creating and Managing Groups
-- Use `groupadd` to add groups
-- `groupdel` and `groupmod` can be used to delete and modify groups
-- Use `lid -g groupname` to list all users that are members of a specific group
-- Use `cat /etc/group` to the list of existing group
+- `groupadd <groupname>` to add a group. Use `-g <GID>` to set a specific GID or -r for a system group
+- `groupmod [options] <groupname>` to modify a group. Rename with `-n newname` or change its GID with `-g <GID>`.
+- `groupdel <groupname>`to remove the group. It must not be any user's primary group
+- `lid -g <groupname>` to show group members.
+- `cat /etc/group` to list all groups
 
 ## Password encryption
 - Encrypted passwords are stored in /etc/shadow

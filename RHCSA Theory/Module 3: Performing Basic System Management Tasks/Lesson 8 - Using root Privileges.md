@@ -22,27 +22,34 @@
 - This will prompt for the current user password, and run the command if this allowed through /etc/sudoers
 - To open a root shell, `sudo -i` can be used
 
-## 8.4 Managin sudo Configuration
-- Sudo configuration is managed through /etc/sudoers
-- Don't edit this file directly, only edit it through `visudo`
-- Instead of editing /etc/sudoers, consider creating drop-in files in /etc/sudoers.d
-- /etc/sudoers is installed from packages and may be overwritten, drop-in files will never be overwritten
+## 8.4 Managing sudo Configuration
+- `/etc/sudoers` is a primary sudoers file that defines with users or groups can run which commands as which targets.
+- `visudo` to edit `/etc/sudoers` safely.
+- use drop-ins in `/etc/sudoers.d` that place small snippets (e.g. admins, developers) here instead of editing the main file
+    ```bash
+    sudo visudo -f /etc/sudoers.d/myrules.conf
+    ```
+- /etc/sudoers is installed from packages and **may be overwritten**, drop-in files will **never be overwritten**
 
 ### Providing Administrator Access
-- Users that are a member of the group `wheel` get full sudo access
-    - This is accomplished by `%wheel ALL=(ALL) ALL` in /etc/sudoers
-    - User `usermod -aG wheel myuser` to add a user to the group wheel
-- DO NOT enable the line `%wheel ALL=(ALL) NOPASSWORD: ALL`
-    - It will provide full sudo access without entering a password and is very dangerous
-- If you don't like entering your user password every five minutes, increase authentication token expiration by adding the folliwng
-    - `Defaults timestamp_type=global,timestamp_timeout=60`
+- Enable sudo for the `wheel` group
+    - Ensure `/etc/sudoers` contains `%wheel ALL=(ALL) ALL`
+    - Then add users with `usermod -aG wheel myuser`
+- Avoid passwordless:
+    - Do no enable: `%wheel ALL=(ALL) NOPASSWD: ALL` because it will grant full access without any password.
+- Extend sudo's password timeout. By default, sudo re-prmpts every 5 minutes. To change it to 60 minutes, add via visudo:
+    ```bash
+    Defaults timestamp_type=global
+    Defaults timestamp_timeout=60
+    ```
 
 ### Providing Access to Specific Tasks
-- Use drop-in files to provide admin access to specific tasks
-    - `lisa ALL=/sbin/useradd, /usr/bin/passwd`
-- Consider using command arguments to make the commands more specific
-    - `%users ALL=/bin/mount /dev/sdb, /bin/umount /dev/sdb`
-    - `linda ALL=/usr/bin/passwd, !/usr/bin/passwd root`
+- To give a user just a few commands
+    - Create `/etc/sudoers.d/lisa` with `lisa ALL=(ALL) /sbin/useradd, /usr/bin/passwd`
+- Limit a group to a specific device
+    - In `/etc/sudoers.d/users`, add `%users ALL=(ALL) /bin/mount /dev/sdb, /bin/umount /dev/sdb`
+- Allow a user to change only their own password
+    - In `/etc/sudoers.d/linda`, add `linda ALL=(ALL) /usr/bin/passwd, !/usr/bin/passwd root`
 
 ### Using ssh to Log in Remotely 
 
