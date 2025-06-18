@@ -80,15 +80,16 @@
 - The order of host name resolution is determined through /etc/nsswitch.conf
 
 ## 11.5 Analyzing Network Configuration
-- The `ip` tool can be used to manage all aspects of IP networking
-- It replaces the legacy `ipconfig` tool, do NOT use `ifconfig` anymore
-- Use `ip addr` to manage address properties
-    - `ip addr add dev ens3p3 10.0.0.10/24`
-- Use `ip link` to show link properties
-    - `ip -s link`
-- Use `ip route` to manage route properties
-    - `ip route show`
-    - `ip route add default via 10.0.0.1`
+- `ip` is the modern tool for all IP-layer tasks (supersedes `ifconfig`/`ipconfig`).
+- Address:
+    - `ip addr show` to list addresses 
+    - `ip addr add 10.0.0.10/24 dev ens3p3` to add an IPv4 address
+- Links:
+    - `ip link show` to show interface status
+    - `ip -s link show` to show interface status with counters/statistics
+- Routes:
+    - `ip route show` to view the routing table
+    - `ip route add default via 10.0.0.1` to set the default gateway
 
 ## 11.6 understanding NetworkManager
 - NetworkManager is the systemd service that manages network configuration
@@ -156,4 +157,4 @@ rhcsaserver.example.com
 - Set your server to a fixed IP address that matches your current network configuration
 - Also get a second IP address 10.0.0.10/24 on the same network interface
 - Enable host name resolution for your local server hostname
-- Reboot and piverify your network is still working with the new settings
+- Reboot and verify your network is still working with the new settings
