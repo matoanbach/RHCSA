@@ -27,9 +27,14 @@
     - Add `-p` to any of the commands above
 
 ### Extracting RPM Packages
-- contents of an RPM package can be extracted to the current directory (without installing)
-    - rpm2cpio mypackage-1.0.rpm | cpio -tv will show the contents of a package
-    - rpm2cpio mypackage-1.0.rpm | cpio -idmv extracts the package contents to the current directory
+- You can peek into or unpack an RPM without installing it by piping `rpm2cio` into `cpio`:
+    - `rpm2cpio mypackage-1.0.rpm | cpio -t` to show all files inside the RPM
+    - `rpm2cpio mypackage-1.0.rpm | cpio -idmv` to unpack files into your current directory
+        - `-i` is to extract
+        - `-d` is to create directories as needed
+        - `-m` is to preserve timestamps
+        - `-v` is verbose output
+
 
 ## 12.2 Setting up Repository Access
 - A repository is a collection of RPM package files with an index that contains the repository contents
@@ -70,10 +75,18 @@
 - `ls /etc/yum.repos.d`
 
 ### Using GPG keys
-- To ensure that packages have not been tampered with, GPG keys can be used
-- A repository GPG key is used to sign all packages and before installing the package, its signature is checked
-- To do this, you'll need a local GPG key to be present
-- To make accessing trusted repositories easier, use the gpgcheck=0 option in the repository client file
+- GPG signatures prove that RPMs come from the right source and haven'y been tampered with.
+- How it works:
+    1. The repository maintainer signs each package with their private GPG key.
+    2. Your system uses the corresponding public key to check that signature before installing
+- How to use:
+    1. Import the repo's public key `rpm --import /path/to/RPM-GPG-KEY`
+    2. In your repo file (`/etc/yum.repos.d/*.repo`), enable checking
+    ```txt
+    gpgcheck=1
+    gpgkey=file:///path/to/RPM-GPG-KEY
+    ```
+- You can set `gpgcheck=0` to skip verification (not recommended unless you fully trust the source)
 
 ## 12.3 Managing Packages with `dnf`
 - `dnf` was created to be intuitive
