@@ -24,7 +24,7 @@
 
 ## 13.3 Understanding Process States
 ### Understanding Runnable Process State
-- When a new process is started (forked) it is scheduled and after being scheduled, it will get a runnable stsate (R)
+- When a new process is started (forked) it is scheduled and after being scheduled, it will get a runnable state (R)
     - In this state it is waiting in the queue to be scheduled
 - Runnable processes will get a time slice, which allows them to get a running state, in either kernel space or user space
 - Runnable processes can get preempted or rescheduled

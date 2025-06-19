@@ -35,7 +35,6 @@
         - `-m` is to preserve timestamps
         - `-v` is verbose output
 
-
 ## 12.2 Setting up Repository Access
 - A repository is a collection of RPM package files with an index that contains the repository contents
 - Repositories are often offered through web sites, but local repositories can be created also

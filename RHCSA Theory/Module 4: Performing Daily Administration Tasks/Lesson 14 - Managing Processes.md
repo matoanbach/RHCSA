@@ -4,7 +4,6 @@
 - 14.3 Using `tuned` Profiles
 - 14.4 Managing User Sessions and Processes
 
-
 # 14.1 Using Signals to Manage Process State
 - A signal allows the operating system to interrupt a process from software and ask it to do something
 - Interrupts are comparable to signals, but are generated from hardware
@@ -89,6 +88,10 @@ vm.swappiness = 40
 ```bash
 tuned-adm list
 ```
+- See available properties such as swappiness:
+```bash
+tuned-adm -a | grep swappiness
+```
 - Switching profiles:
     - To change to a different profile (for example, "virtual-guest"), run:
 
@@ -126,7 +129,7 @@ tuned-adm profile
 sysctl -a | grep swappiness
 cat /etc/tuned/tuned-main.conf
 
-# remember to change reapply_sysctl to 0 in /etc/tuned/main-tuned.conf
+# remember to change reapply_sysctl to 0 in /etc/tuned/tuned_main.conf
 ```
 
 ## 14.4 Managing User Sessions and Processes
