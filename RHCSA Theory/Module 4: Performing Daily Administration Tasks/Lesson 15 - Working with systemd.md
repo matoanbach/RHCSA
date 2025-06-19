@@ -11,7 +11,7 @@
 - What does it do
     - It starts and controls services-like SSH or a web server along with many other system tasks
 - What are units
-    - Any service or task that systemd starts or manages is called a "unit". This includes:"
+    - Any service or task that systemd starts or manages is called a "unit". This includes:
         - Services (e.g., sshd.service, httpd.service)
         - Mount points (e.g., home directories)
         - Sockets (network endpoints)
@@ -26,6 +26,7 @@
     - run" `systemctl -t help`
     - run: `systemctl list-units -t <type of units>` 
     - run: `systemctl list-unit-files`
+
 ### Understanding systemd Unit Types
 - Service units: Start and manage background processes or daemons (e.g., web server, SSH)
 - Socket units: Watch for network activity on a specific port and automatically launch the related service when a connect arrives
