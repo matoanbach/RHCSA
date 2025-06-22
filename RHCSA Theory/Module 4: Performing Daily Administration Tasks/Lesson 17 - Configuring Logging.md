@@ -55,7 +55,7 @@
 - Use `journalctl | grep -E 'Runtime Journal | System Journal'` to check current settings
 
 ### Demo: Making the Journal Persistent
-- `grep 'Storage=' /etc/systemd/journal.conf`
+- `grep 'Storage=' /etc/systemd/journald.conf`
 - `mkdir /var/log/journal`
 - `systemctl restart systemd-journald`
 - `ls /var/log/journal`
@@ -79,7 +79,7 @@
 - Because of the lack of facilities, some services take care of their own logging and don't use rsyslog
 
 ## 17.5 Using logrotate
-- The `logrotate` command is started by a systemd timer to prevent them from growing to big
+- The `logrotate` command is started by a systemd timer to prevent them from growing too big
 - After rotation, the file is renamed to a file with the rotation date as extension
 - When too many files are rotated, according to the settings, the oldest file will be discarded
 - Log rotation configured in files /etc/logrotate.conf and /etc/logrotate.d

@@ -35,7 +35,7 @@ systemctl cat sysstat-collect.timer
     - `OnCalendar=2023-*-*9:9,19,29:30` runs the service every day in 2023 at 9:09:30, 9:09:30, 9:19:30 and 9:29:30
 - Use `OnUnitActivateSec` to start the unit a specified time after the unit was lasat activated
 - Use `OnBootSec` or `OnStartupSec` to start the unit a specific time after booting
-- Read man `7 systemd-time` for specification of the time format to be used
+- Read `man 7 systemd-time` for specification of the time format to be used
 
 ### Demo: Managing systemd Timers
 - `cat >> /etc/systemd/system/touchfile.service << EOF`
