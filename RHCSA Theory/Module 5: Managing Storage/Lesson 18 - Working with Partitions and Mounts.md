@@ -16,7 +16,7 @@
 - Stratis: Stratis is a newer, user-space tool that makes storage management simpler. Because it runs in user space, other programs can talk to it via an API to do things like thin provisioning (only using space as data is written) and automated snapshots.
 
 ### Linux Block Devices
-- What are block devices: They are interfaces for stoage drives (hard drives, SSDs, USB drives, etc.), and each one is named based on the driver and type of hardware
+- What are block devices: They are interfaces for storage drives (hard drives, SSDs, USB drives, etc.), and each one is named based on the driver and type of hardware
 - Common names you'll see:
     - `/dev/sd[x]` - Used for SCSI or SATA disks (e.g., `/dev/sda`, `/dev/sdb`) 
     - `/dev/vd[x]` - Used for virtual disks in KVM/QEMU virtual machines (e.g., `/dev/vda`)
@@ -78,7 +78,7 @@
     - You can grow (increase) an XFS filesystem while it's mounted, but you cannot shrink it
 - Ext4 (used in older RHEL versions)
     - Backward compatible with Ext2, so older tools still work
-    - Uses journaling to protect data against crahses
+    - Uses journaling to protect data against crashes
     - You can both grow and shrink an Ext4 filesystem as needed
 - vfat (FAT32)
     - A generic filesystem that works on Linux, Windows, and macOS.
