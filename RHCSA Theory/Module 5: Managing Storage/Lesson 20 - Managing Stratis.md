@@ -74,3 +74,11 @@ mount /dev/stratis/mypool/myfs-snap /myfs-snap
 ls -l /myfs-snap
 stratis fs destroy mypool myfs-snap
 ```
+
+## Lesson 20 Lab: Managing Stratis
+- Create a stratis pool with a size of 10G, with the name stratispool, containing 2 filesystems: myfiles and myprograms
+- Mount these volumes persistently on /myfiles and /myprograms
+- Copy all files from /etc/ that have a name starting with an a, c or f to /myfiles
+- Create a snapshot of the `myfiles` filesystem
+- Delete all files from `/myfiles` that have a name starting with an a
+- Verify that you can still access these files from the snapshot
