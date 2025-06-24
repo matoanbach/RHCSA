@@ -15,7 +15,7 @@
 - Enter Grub menu while booting
 - While the line that loads the Linux kernel and add `init=/bin/bash`
 - `mount -o remount,rw /`
-- `password root`
+- `passwd root`
 - `touch /.autorelabel`
 - `exec /usr/lib/systemd/systemd`
 
