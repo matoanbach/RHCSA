@@ -13,7 +13,7 @@
 - You can also add simple logic - loops (for, while) and checks (if, case) - to make the script only do certain things when certain conditions are met
 
 ### Bash Scripts Compared
-- They're easy to write and anyone can run them - every Linux system alread has a shell to interpret them.
+- They're easy to write and anyone can run them - every Linux system already has a shell to interpret them.
 - If you only use built-in shell commands (no external programs), the script runs very quickly since nothing extra needs loading.
 - There's no compilation step: you just save the text file, make it executable, and run it
 - When tasks get more complicated (heavy data processing, complex logic, or interacting with APIs), people often switch to languages like Python - or use automation tools like Ansible - because they offer richer libraries and features
@@ -90,16 +90,8 @@ else
     dir=$1
 fi
 
-txtfiles=`ls $dir/*.txt`
-
-for eachfile in $txtfiles
+for file in /dir/*.txt
 do
-    `cp $eachfile "$eachfile".bak`
-done
-
-baktxtfiles=`ls *.txt.bak`
-for eachfile in $baktxtfiles
-do
-    `mv $eachfile /tmp`
-done
+    cp $file $file.bak
+    mv $file.bak /tmp
 ```
