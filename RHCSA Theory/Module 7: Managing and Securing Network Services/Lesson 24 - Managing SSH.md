@@ -12,7 +12,7 @@
 - `ssh-keygen` runs on your local machine (the client). It creates two files:
     1. A private key (e.g. ~/.ssh/id_rsa) - keep this secret
     2. A public key (e.g ~/.ssh/id_rsa.pub) - this is safe to share
-- `ssh-copy-id` runs from the client. It takes your public key (id_rsa.pub) and appends it to the server user's `~/.ssh/authorized_key` file. After that, when you `ssh user@server`, your client provides the private key and the server verifies it against the public key in authorized_keys. If they match, you log in without typing a password.
+- `ssh-copy-id user@server` runs from the client. It takes your public key (id_rsa.pub) and appends it to the server user's `~/.ssh/authorized_key` file. After that, when you `ssh user@server`, your client provides the private key and the server verifies it against the public key in authorized_keys. If they match, you log in without typing a password.
 
 ## 24.3 Caching SSH Keys
 ### Understanding `ssh-agent`
