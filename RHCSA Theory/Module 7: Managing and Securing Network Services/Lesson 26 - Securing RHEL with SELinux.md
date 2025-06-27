@@ -11,7 +11,7 @@
 
 ## 26.1 Understanding the Need for SELinux
 ### Understanding the Need for SELinux
-- Linux already has the old UNIX security model, but only covers biuts and pieces of what modern systems need.
+- Linux already has the old UNIX security model, but only covers bios and pieces of what modern systems need.
 - SELinux sits on top of that and locks down every part of the OS with a single, consistent policy.
 - Rule of thumb: "**If it's not explicitly allowed, it's automatically denied.**"
 - That means any new or unrecognized service won't run until you give it an SELinux rule.
@@ -43,7 +43,7 @@
         user:role:type:level
         ```
     - **Source objects** (the active party) are usually processes, running under a particular SELinux user and role
-    - **Target objects** (the passive party) are things those processes want to touch - files, directories, network ports, sockets, etc. - each with its won context label
+    - **Target objects** (the passive party) are things those processes want to touch - files, directories, network ports, sockets, etc. - each with its own context label
     - **Policy rules** then say "a process with context A can (or cannot) perform action X on an object with context B"
 
 - For example, the Apache web server process (httpd_t) might be allowed to read files labeled `httpd_content_t` but denied access to files labeled shadow_t (where the password database lives)
@@ -57,7 +57,7 @@
 
 ## 26.4 Using File Context Labels
 ### Understanding Context Labels
-- Every file, process, port, or other object in SELinux gets a "context" tag in the form `user:role:typ:level`
+- Every file, process, port, or other object in SELinux gets a "context" tag in the form `user:role:type:level`
 - **user** and **role** identify the SELinux user account and the role it's performing (these usually stay constant under default policies.)
 - **type** is the key part you'll work with - things like httpd_t for Apache processes or `var_log_t` for logs files. SELinux policy rules match a process's type against an object's type to decide whether the action is allowed
 - **level** (the MLS/MCS part) is almost always ignored on RHEL exams, so you can safely focus on type
@@ -75,7 +75,7 @@ ps -Z | grep httpd
 2. Apply those policy rules to the actual filesystem so files gain the new context
     - `restorecon -Rv <path>` to relabel that directory tree immediately.
     - Or `touch /.autorelable` and reboot - SELinux will relabel everything at startup
-3. Don'y use `chcon` for permanent changes. It only alters the live context and will be undone next time you run `restorecon` (or the system relabels)
+3. Don't use `chcon` for permanent changes. It only alters the live context and will be undone next time you run `restorecon` (or the system relabels)
 4. `semanage fcontext -l -C` to see only your custome file-context entries in the policy
 5. `man semanage-fcontext` for full documentation
 6. `grep AVC /var/log/audit/audit.log` to see the error logs
@@ -88,7 +88,7 @@ ps -Z | grep httpd
 2. Read the docs
 `dnf install selinux-policy-doc`
 3. Use the trouble-shooter. It will analyze the denial and suggest the exact semanage.
-`sealert - a /var/log/audit/audit.log`
+`sealert -a /var/log/audit/audit.log`
 
 - In short: look up the built-in rules, read the policy docs, or let `sealert` tell you the correct type
 

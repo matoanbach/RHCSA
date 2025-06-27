@@ -10,7 +10,6 @@
 - The default DocumentRoot is `/var/www/htdocs`
 - Apache looks for a file with the name `index.html` in this directory
 
-
 ## 25.2 Creating a Basic Web Site
 
 - logs are forwarded to `/var/log/httpd`
