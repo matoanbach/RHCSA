@@ -9,7 +9,7 @@
 - A **socket** is just an IP address + port (or a UNIX-domain endpoint) that programs use to communicate
 - `ss` is the go-to tool to list those sockets on Linux
 - Common **ss flags**:
-    - `ss` will show al connections
+    - `ss` will show all connections
     - `ss -t` to show only **TCP** sockets
     - `ss -u` to show only **UDP** socketsu 
     - `ss -tu` to show both TCP and UDP (connected) sockets
