@@ -25,11 +25,11 @@ firewall-cmd --reload
 1. Define the mount point
 - In **/etc/auto.master**, tell autofs what directory to manage and which map file to use
 ```bash
-/data /etc/auto.nfsdata
+/nfsdata /etc/auto.nfsdata
 ```
 
 2. List your mounts
-- In **/etc/auto.nfsdata**, map a name under /data to the real export. For example:
+- In **/etc/auto.nfsdata**, map a name under /nfsdata to the real export. For example:
 ```bash
 files -rw nfsserver:/nfsdata
 ```
