@@ -55,7 +55,7 @@
 - Red Hat registries can be accessed with a Red Hat account
 - Developer accounts (https://developers.redhat.com) do qualify
 - `podman login registy.redhat.io` to login to a registry
-- `podman loging registry.redhat.io --get-login` to get your current login credentials
+- `podman login registry.redhat.io --get-login` to get your current login credentials
 
 ### Configuring Registry Access
 1. Global config file: `/etc/containers/registries.conf`
@@ -143,7 +143,7 @@ podman run --name mydb -e MYSQL_ROOT_PASSWORD=password quay.io/centos7/mariadb-1
 
 ### Demo: Mapping Ports
 ```bash
-run as non-root user
+# run as non-root user
 podman login registry.access.redhat.com
 podman run -d -p 80:80 registry.access.redhat.com/ubi9/nginx-120
 podman run -d -p 8080:80 registry.access.redhat.com/ubi9/nginx-120
@@ -236,7 +236,7 @@ ls -Z /home/user
 - Use `podman` to generate a user systemd file for an existing container
 - Before, `mkdir ~/.config/systemd/user; cd ~/.config/systemd/user`
 - Notice the file will be generated in the current directory
-    - `podman generate systedm --name myweb --files --new`
+    - `podman generate systemd --name myweb --files --new`
 - To generate a service file for a root container, do it from /etc/systemd/system as the current directory
 
 ### Understanding `podman generate --new`
@@ -279,7 +279,7 @@ systemctl --user status container-mynginx.service
 ## Lesson 31 Lab: Running Containers
 - Ensure that you have full access to the Red Hat Container repositories
 - Run a Mariadb container in Podman, which meets the following conditions
-    - The container is started as a rootless contaienr by user student
+    - The container is started as a rootless container by user student
     - The container must be accessible at host port 3206
     - The database root password should be set to password
     - The container uses the name mydb
