@@ -94,4 +94,5 @@ for file in /dir/*.txt
 do
     cp $file $file.bak
     mv $file.bak /tmp
+done
 ```
