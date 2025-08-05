@@ -43,8 +43,8 @@
 - Also create a 1 GiB swap partition and ensure it is mounted persistently.
 
 - Solution:
-
     ```bash
+    # note UUID is optional
     fdisk /dev/sdb
     p # to create a new partition
     t # to change the partition type to fat32 (vfat) partition
@@ -53,7 +53,6 @@
     t # to change the partition type to swap 
 
     w # write and exit fdisk
-
     mkfs.vfat /dev/sdb1
     swapon /dev/sdb1
     lsblk --output=UUID /dev/sdb1 | awk '{print $2}' >> /etc/fstab
