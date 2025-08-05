@@ -1,7 +1,8 @@
 # Lesson 32.1 Exploring RHCSA Practice Exam Assignments
 ### Setting up a Base Server
-- Install two servers using the minimal installation pattern. Use the names server1.example.com and server2.example.com and use DHCP to get an IP address from the local DNS server. n
+- Install two servers using the minimal installation pattern. Use the names server1.example.com and server2.example.com and use DHCP to get an IP address from the local DNS server.
 - Solution:
+    - On both servers, config both using the below configuration:
     - `/`: 15GiB
     - `/home`: 3 GiB
     - `/boot`: 500 MiB
@@ -17,8 +18,8 @@
     - Reboot and then press `e`. Add line `init=/bin/bash`
     - `mount -o remount,rw /`
     - `passwd root`
-    - `touch .autorelabel`
-    - `exec /usr/bin/systemd/systemd`
+    - `touch /.autorelabel`
+    - `exec /usr/lib/systemd/systemd`
 
 ### Configuring a Repository
 - On both servers, create an ISO file based on the installation DVD. Mount this ISO file persistently and configure the servers to use the local ISO file as the repositories. After carefully completing this assignment, you should be able to install software on both servers.
