@@ -72,15 +72,15 @@
 - Create a logical volume with the name myfiles. Ensure it uses 8 MiB extents. Configure the volume to use 75 extents. Format it with the ext4 file system and ensure it mounts persistently on `/myfiles`
 - If volume groups need to be created, create them as needed
     - Solution:
-        - `fdisk /dev/sdb`
+        - `fdisk /dev/sda`
         - Then create an extended partion and then create logical partitions with LVM type
-        - `pvcreate /dev/sdb1`
-        - `vgcreate -s 8M myvg /dev/sdb1`
-        - `lvcreate -n myfiles -l 75 myvg`
+        - `pvcreate /dev/sda6`
+        - `vgcreate -s 8M myvg /dev/sdb6`
+        - `lvcreate myvg -n myfiles -l 75`
         - `mkfs.ext4 /dev/myvg/myfiles`
 - Increase the size of the `/` logical volume by 5 GiB
     - Solution:
-        - `lvextend -L +5G /dev/myvs/myfiles`
+        - `lvextend -r -L +5G /dev/myvs/myfiles`
      
 
 ### Creating Users and Groups
