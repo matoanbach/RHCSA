@@ -26,7 +26,8 @@
 
 - Solution:
     - Install the ISO file to DVD on both RHEL instances
-    - `echo "dd if=/dev/sr0 of=/rhel9.iso bs=1M"`
+      - On **VMWare**, go VM > Settings > Add a CD/DVD > Pick an RHEL image on your host machine filesystem.
+    - `dd if=/dev/sr0 of=/rhel9.iso bs=1M`
     - `mkdir /repo`
     - `cp /etc/fstab /etc/fstab.bak`
     - `echo "/rhel9.iso     /repo    iso9660        defaults  0  0" >> /etc/fstab`
