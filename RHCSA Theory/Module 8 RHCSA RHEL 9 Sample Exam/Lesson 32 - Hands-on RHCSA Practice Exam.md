@@ -86,9 +86,11 @@
 ### Creating Users and Groups
 - Create a user lisa. Ensure she has the password set to "password" and is using UID 1234. She must be a member of the secondary group sales
     - Solution:
+        - `groupadd sales`
         - `useradd lisa`
         - `passwd lisa` and then enter `password` as password
-        - `usermod --uid 1234 lisa`
+        - `usermod --uid 1234 -G sales lisa`
+
 - Create a user myapp. Ensure this user cannot open an interactive shell.
     - Solution:
         - `useradd myapp`
