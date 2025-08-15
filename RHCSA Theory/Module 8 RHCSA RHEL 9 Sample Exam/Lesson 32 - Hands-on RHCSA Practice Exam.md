@@ -94,16 +94,18 @@
 ### Creating Users and Groups
 - Create a user lisa. Ensure she has the password set to "password" and is using UID 1234. She must be a member of the secondary group sales
     - Solution:
-        - `groupadd sales`
-        - `useradd lisa`
-        - `passwd lisa` and then enter `password` as password
-        - `usermod --uid 1234 -G sales lisa`
+        ```bash
+        groupadd sales
+        useradd -s /usr/sbin/nologin -u 1234 -p password -G sales lisa
+        ```
 
 - Create a user myapp. Ensure this user cannot open an interactive shell.
     - Solution:
-        - `useradd myapp`
-        - `usermod -s /sbin/nologin myapp`
-        - `usermod -s /bin/bash myapp`
+        ```bash
+        useradd myapp
+        usermod -s /sbin/nologin myapp
+        usermod -s /bin/bash myapp
+        ```
 
 ### Managing Permissions
 - Create a shared group directory `/sales`  and ensure that `lisa` is the owner of that directory. The owner and the group sales should have permissions to access this directory and read and write files in it. Other user should have no permission at all. Ensure that any new file that is created in this directory is group-owned by the group sales automatically
