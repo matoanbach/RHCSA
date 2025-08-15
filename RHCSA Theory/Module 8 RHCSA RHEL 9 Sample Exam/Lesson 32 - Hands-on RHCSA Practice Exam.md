@@ -43,7 +43,7 @@
 ### Managing Partitions
 - On server1, use your virtualization software to increase the size of your primary disk in such a way that at least 10 GiB of unallocated disk space is available.
     - Solution:
-        - Shutdown the RHEL instance, and add one more Disk using `Parallels` control center
+        - Shutdown the RHEL instance, and add one more Disk using `VMWare` control center
 - In the free disk space, create a 1 GiB partition and format it with vfat filesystem. Make sure it is mounted persistently on the `/winfile` directory.
 
 - Also create a 1 GiB swap partition and ensure it is mounted persistently.
@@ -59,17 +59,15 @@
     t # to change the partition type to swap 
 
     w # write and exit fdisk
-    mkfs.vfat /dev/sdb1
-    swapon /dev/sdb1
-    lsblk --output=UUID /dev/sdb1 | awk '{print $2}' >> /etc/fstab
+    mkfs.vfat /dev/sda4
+    swapon /dev/sda4
     # add the line below to /etc/fstab 
-    UUID=..... /winfile vfat defaults 0 0
+    /dev/sda4 /winfile vfat defaults 0 0
 
-    mkswap /dev/sdb2
-    swapon /dev/sdb2
-    lsblk --output=UUID /dev/sdb2 | awk '{print $2}' >> /etc/fstab
+    mkswap /dev/sda5
     # add the line below to /etc/fstab 
-    UUID=..... none swap defaults 0 0
+    /dev/sda5 none swap defaults 0 0
+    swapon /dev/sdaa5
 
     findmnt --verify # to verify everything before reboot
     ```
