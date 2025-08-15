@@ -28,12 +28,17 @@
 - Solution:
     - Install the ISO file to DVD on both RHEL instances
       - On **VMWare**, go VM > Settings > Add a CD/DVD > Pick an RHEL image on your host machine filesystem.
-    - `dd if=/dev/sr0 of=/rhel9.iso bs=1M`
-    - `mkdir /repo`
-    - `cp /etc/fstab /etc/fstab.bak`
-    - `echo "/rhel9.iso     /repo    iso9660        defaults  0  0" >> /etc/fstab`
-    - `dnf config-manager --add-repo file:///repo/BaseOS`
-    - `dnf config-manager --add-repo file:///repo/AppStream`
+    - Run the following:
+    ```bash
+    dd if=/dev/sr0 of=/rhel9.iso bs=1M
+    mkdir /repo
+    cp /etc/fstab /etc/fstab.bak
+    echo "/rhel9.iso     /repo    iso9660        defaults  0  0" >> /etc/fstab
+    mount /rhel9.iso /repo
+    mount -a
+    dnf config-manager --add-repo file:///repo/BaseOS
+    dnf config-manager --add-repo file:///repo/AppStream
+    ```
 
 ### Managing Partitions
 - On server1, use your virtualization software to increase the size of your primary disk in such a way that at least 10 GiB of unallocated disk space is available.
