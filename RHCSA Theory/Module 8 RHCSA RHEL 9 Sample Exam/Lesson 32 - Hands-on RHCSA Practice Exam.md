@@ -3,11 +3,13 @@
 - Install two servers using the minimal installation pattern. Use the names server1.example.com and server2.example.com and use DHCP to get an IP address from the local DNS server.
 - Solution:
     - On both servers, config both using the below configuration:
-    - `/`: 15GiB
-    - `/home`: 3 GiB
-    - `/boot`: 500 MiB
-    - `swap`: 1 GiB
-    - `/boot/efi`: 500 MiB
+    ```yml
+    - /: 15GiB
+    - /home: 3 GiB
+    - /boot: 500 MiB
+    - swap: 1 GiB
+    - /boot/efi: 500 MiB
+    ```
 
 - Ensure that the partition for `/` is 15GiB. Also create a 1GiB swap partition. Do NOT register the servers with Red Hat
 
