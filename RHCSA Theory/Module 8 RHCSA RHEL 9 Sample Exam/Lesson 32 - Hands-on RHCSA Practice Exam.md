@@ -110,12 +110,15 @@
 ### Managing Permissions
 - Create a shared group directory `/sales`  and ensure that `lisa` is the owner of that directory. The owner and the group sales should have permissions to access this directory and read and write files in it. Other user should have no permission at all. Ensure that any new file that is created in this directory is group-owned by the group sales automatically
     - Solution:
-        - `mkdir /sales`
-        - `groupadd sales`
-        - `usermod -aG sales lisa`
-        - `chown lisa:sales /sales`
-        - `chmod g+ws /sales` to set SGID so that any files or sub directories will inherit the rules from the parent folder.
+        ```yml
+        mkdir /sales
+        groupadd sales
+        usermod -aG sales lisa
+        chown lisa:sales /sales
+        chmod g+ws /sales` # to set SGID so that any files or sub directories will inherit the rules from the parent folder.
+        ```
         - note: SGID only works with group
+
 ### Scheduling Jobs
 - Schedule a job that writes "hello folks" to syslog every Monday through Friday at 2 AM. Make sure this job is executed as the user lisa.
     - Solution:
