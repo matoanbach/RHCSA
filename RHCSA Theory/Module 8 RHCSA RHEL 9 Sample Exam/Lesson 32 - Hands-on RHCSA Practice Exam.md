@@ -186,6 +186,9 @@
         - `vim /etc/auto.homes`
             ```vim
             *   -rw     server2:/homes/& 
+            # or
+            user1 -rw server2:/homes/user1
+            user2 -rw server2:/homes/user2
             ```
 
 
