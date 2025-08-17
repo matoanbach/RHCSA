@@ -122,8 +122,11 @@
 ### Scheduling Jobs
 - Schedule a job that writes "hello folks" to syslog every Monday through Friday at 2 AM. Make sure this job is executed as the user lisa.
     - Solution:
-        - `crontab -u lisa -e`
-        ```bash
+        ```yml
+        su - lisa
+        crontab -e # or if under root, run: crontab -u lisa -e
+        ```
+        ```yml
         SHELL=/bin/bash
         PATH=/sbin/:bin/:/usr/sbin:/usr/bin
         MAILTO=root
