@@ -141,19 +141,24 @@
     3. You do not have to create any databases in it.
 
     - Solution:
-        - `su - lisa`
-        - `podman login registry.access.redhat.com`
-        - `podman unshare cat /proc/self/uid_map`
-        - `podman unshare chown 1234:1234 /home/lisa/mydb`
-        - `podman run -d -n mydb -e MYSQL_ROOT_PASSWORD=password -p 3206:3206 -v /home/lisa/mydb:/var/lib/mysql docker.io/alpine/mariadb`
-        - `firewall-cmd --add-port=3206/tcp --permanent`
-        - `firewall-cmd --reload`
-        - `loginctl enable-linger lisa`
-        - `mkdir -p ~/.config/systemd/user; cd ~/.conf/systemd/user`
-        - `podman generate systemd --name mydb --files --new`
-        - `systemctl --user daemon-reload`
-        - `systemctl --user start container-mydb.service`
-        - `systemctl --user status container-mydb.service`
+        ```yml
+        su - lisa
+        podman login registry.access.redhat.com
+        podman search mariadb-103-centos
+        podman pull docker.io/centos/mariadb-103-centos7
+        podman inspect docker.io/centos/mariadb-103-centos7 | grep User
+
+        podman unshare cat /proc/self/uid_map
+        podman unshare chown $(UUID):$(UUID) /home/lisa/mydb
+        podman run -d --name mydb -e MYSQL_ROOT_PASSWORD=password -p 3206:3206 -v /home/lisa/mydb:/var/lib/mysql:Z docker.io/centos/mariadb-103-centos7 
+        firewall-cmd --add-port=3206/tcp --permanent
+        firewall-cmd --reload
+        loginctl enable-linger lisa
+        mkdir -p ~/.config/systemd/user; cd ~/.conf/systemd/user
+        podman generate systemd --name mydb --files --new        systemctl --user daemon-reload
+        systemctl --user start container-mydb.service
+        systemctl --user status container-mydb.service
+        ```
 
 ### Managing Automount
 - On server2, create the directories `/homes/user1` and `/homes/user2`. Use NFS to share these directories and ensure the firewall does not block access to these directories.
