@@ -197,5 +197,38 @@
 
 ### Managing SELinux
 - Ensure that the Apache web server is installed and configure it to offer access on port 82.
+
+- Install the graphical interface
+```yml
+dnf groupinstall "Server with GUI"
+reboot
+```
+
+- Install sealert
+```bash
+dnf install setroubleshoot-server
+```
+
+- solution
+```bash
+dnf install httpd
+vim /etc/httpd/conf/httpd.conf
+# edit httpd.conf
+Listen 82
+# end edit
+
+firewall-cmd --add-service=http,https --permanent
+firewall-cmd --add-port=82/tcp --permanent
+
+systemctl enable --now httpd
+# if error run:
+journactl | grep sealert
+sealert -l 94f10b28-d87d-400b-9c0b-0cc947e1c9b4
+# endif
+semanage port -a -t http_port_t -p tcp 82 
+systemctl restart httpd
+curl localhost:82 
+```
+
 - Copy the file `/etc/hosts` to `/tmp/hosts`. Next, move `/tmp/hosts` to the directory `/var/www/html/hosts` and ensure this file can be access by the Apache web server.
 - `semanage fcontext`
