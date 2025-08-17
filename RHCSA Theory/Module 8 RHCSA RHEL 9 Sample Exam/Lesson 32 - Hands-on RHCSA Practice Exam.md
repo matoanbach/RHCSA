@@ -232,3 +232,44 @@ curl localhost:82
 
 - Copy the file `/etc/hosts` to `/tmp/hosts`. Next, move `/tmp/hosts` to the directory `/var/www/html/hosts` and ensure this file can be access by the Apache web server.
 - `semanage fcontext`
+
+```yml
+  326  journalctl | grep sealert
+  327  sealert -l 94f10b28-d87d-400b-9c0b-0cc947e1c9b4
+  328  semanage port -a -t http_port_t -p tcp 82
+  329  systemctl restart httpd
+  330  systemctl status httpd
+  331  cat /etc/httpd/conf/httpd.conf 
+  332  c;ear
+  333  curl localhost
+  334  curl localhost:82
+  335  clear
+  336  cp /etc/hosts /tmp/hosts
+  337  cat /tmp/hosts
+  338  clear
+  339  mv /tmp/hosts /var/www/html/hosts
+  340  ls /tmp
+  341  ls /var/www/html/
+  342  ls -lZ /var/www/html/
+  343  vim /etc/httpd/conf/httpd.conf 
+  344  systemctl restart httpd
+  345  systemctl status httpd
+  346  curl localhost:82
+  347  ls -lZ /var/www/html/hosts 
+  348  ls -lZ /var/www/html 
+  349  ls -ldZ /var/www/html
+  350  semanage --help
+  351  semanage fcontext
+  352  semanage fcontext -l
+  353  semanage fcontext -l | grep http
+  354  clear
+  355  semanage-fcontext
+  356  # httpd_sys_rw_content_t
+  357  man semanage-fcontext
+  358  semanage fcontext -a -t httpd_sys_content_t "/web(/.*)?"
+  359  ls /web
+  360  ls /
+  361  semanage fcontext -a -t httpd_sys_content_t "/var/www/html(/.*)?"
+  362  restorecon /var/www/html/hosts 
+  363  ls -lZ /var/www/html/hosts
+```
