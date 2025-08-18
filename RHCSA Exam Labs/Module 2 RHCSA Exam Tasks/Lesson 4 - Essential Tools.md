@@ -93,16 +93,15 @@ id linda
 ls -ld /data/profs
 ```
 
-
-
 ## 4.4 Finding files
 ### Task
 - Find all files with a size bigger than 100 MiB, and write a long listing of these files to the file `/tmp/files`
 - Solution:
-
     ```bash
     find / -size +100M -type f -exec ls -l {} \; 2>/dev/null > /tmp/myfiles
+    find / -size +100M -type f 2>/dev/null -exec ls -l {} \; > /tmp/bigfiles
     ```
+
 ### Key Elements
 - `find` is used to find files based on any property
 - To perform a command on the result of the `find` command, add `-exec command {} \;` to `find` command
