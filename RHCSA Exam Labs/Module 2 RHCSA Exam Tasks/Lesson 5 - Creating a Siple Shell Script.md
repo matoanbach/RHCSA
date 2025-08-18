@@ -47,23 +47,22 @@
 
 - Solution:
     ```bash
-    #!/bin/bash
+    #! /bin/bash
 
-    if [ $# == 0 ]
+    if [[ -z $1 ]]
     then
-        read -rp "ENTER USERS (separated by ','): " raw
-        IFS=',' read -r -a users <<< "$raw"
+        read -p "what users: " users
     else
-        users=("$@")
+        users=$@
     fi
-    
-    for user in "${users[@]}"
+
+    for user in ${users}
     do
-        if ! id -u "$user" $>/dev/null
+        if id $user &>/dev/null
         then
-            echo "ERROR: $user not found in /etc/passwd"
+            echo "User -- ${user} -- has login shell: $(cat /etc/passwd | grep $user | awk -F: '{ print $NF }')"
         else
-            grep "$user" /etc/passwd | awk -F: '{ print $NF }'
+            echo "User ${user} does not exist"
         fi
     done
     ```
