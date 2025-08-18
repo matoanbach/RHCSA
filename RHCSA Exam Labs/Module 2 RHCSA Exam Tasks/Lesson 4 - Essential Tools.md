@@ -64,7 +64,6 @@ dnf repolist # to verify the work
    # end editing
 ```
 
-
 ## 4.3 Managing permissions
 ### Task: Managing Permissions
 - Create a directory with the name `/data/profs`
@@ -75,20 +74,26 @@ dnf repolist # to verify the work
 - Nobody else should have access to the directory
     - Solution:
 
-    ```bash
-    # under root privileges
-    groupadd profs
-    useradd linda -G profs
-    mkdir -p /data/profs
-    chown linda:profs /data/profs
-    chmod 070 /data/profs
-    ```
-
 ### Key Elements:
 - Basic permissions are based on ownership
 - Each file has a user-owner, a group-owner, and the other entities
 - While evaluating permissions, Linux checks user-ownership and group-ownership. If the user accessing a fil eis neither user-owner, not group-owner, permissions for others are assigned.
 - The check will exit on match: if a user is user-owner, group permissions and perissions for other are not checked.
+
+```bash
+mkdir -p /data/profs
+groupadd profs
+useradd linda
+chown linda:profs /data/profs
+chmod o= /data/profs
+chmod u= /data/profs
+chmod g=xwr /data/profs
+usermod -G profs linda
+id linda
+ls -ld /data/profs
+```
+
+
 
 ## 4.4 Finding files
 ### Task
