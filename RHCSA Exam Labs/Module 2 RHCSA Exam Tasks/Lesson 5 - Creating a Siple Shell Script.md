@@ -10,32 +10,19 @@
 
     ```bash
     #!/bin/bash
-    if [ -z $1 ]
-    then
-        echo Directory missing, exiting...!
-        exit 9
-    else
-        dir=$1
-    fi
+    read -p "What dir: " dir
 
-    for file in "$dir"/*.txt
+    for file in ${dir}/*.txt
     do
-        cp $file $file.bak
-        rename .txt.bak .bak $file.bak
+        rename .txt .bak $file
     done
     ```
 
     ```bash
     #!/bin/bash
-    if [ -z $1 ]
-    then
-        echo Directory missing, exiting...!
-        exit 9
-    else
-        dir=$1
-    fi
+    read -p "What dir: " dir
 
-    for file in "$dir"/*.txt
+    for file in ${dir}/*.txt
     do
         cp $file "${file%.txt}.bak"
     done
