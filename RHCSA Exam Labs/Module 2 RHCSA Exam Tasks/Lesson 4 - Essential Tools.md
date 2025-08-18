@@ -1,4 +1,4 @@
-## 4.2 Configuring Remote Repository Access
+## 4.1 Configuring Remote Repository Access
 ### Task: Confuguring remote repository access
 - Configure your system such that it can use the repository `https://repository.example.com`
 - Ensure that no GPG checks will be done while accessing this repository
@@ -20,6 +20,13 @@ gpgcheck=1
 
 dnf repolist # to verify the work
 ```
+
+## 4.2 Configuring local repository access
+### Task: Configure local repository access
+- Make an ISO file of your installation disk and store it as `/rhel9.iso`
+- Mount it persistently on the directory `/repo` on your local server.
+- Configure your local server to access this mounted disk as a repository.
+- Verify that you can install packages from this repository.
 
 ## 4.3 Managing permissions
 ### Task: Managing Permissions
