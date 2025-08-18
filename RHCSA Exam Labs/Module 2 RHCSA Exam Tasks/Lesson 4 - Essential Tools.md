@@ -1,3 +1,26 @@
+## 4.2 Configuring Remote Repository Access
+### Task: Confuguring remote repository access
+- Configure your system such that it can use the repository `https://repository.example.com`
+- Ensure that no GPG checks will be done while accessing this repository
+- Ensure that the client will not actually use this directory
+- To verify your work, the repository should not show while using the `dnf repolist` command, but its configuration should exist
+
+### Solution
+```bash
+dnf config-manager --add-repo=https://repository.example.com
+
+vim /etc/yum.repos.d/repository.example.com.repo
+# start editing repository.example.com
+[repository.example.com]
+name=created by dnf config-manager from https://repository.example.com
+baseurl=https://repository.example.com
+enabled=0
+gpgcheck=1
+# end editing
+
+dnf repolist # to verify the work
+```
+
 ## 4.3 Managing permissions
 ### Task: Managing Permissions
 - Create a directory with the name `/data/profs`
