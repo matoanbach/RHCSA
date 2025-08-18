@@ -28,6 +28,12 @@ dnf repolist # to verify the work
 - Configure your local server to access this mounted disk as a repository.
 - Verify that you can install packages from this repository.
 
+## Key Elements:
+- To create an ISO file, use the `dd` command
+- To mount it persistently, add a line to `/etc/fstab` and use the `iso9660`  filesystem type. Alternatively (not recommended) create a Systemd mount unit.
+- Use `dnf config-manager --add-repo` or manually add a repository file to the `/etc/yum.repos.d/[repo directory]`
+- In the baseurl statement, use `file://` as the resource type identifier.
+
 ### Solution
 ```bash
     lsblk
