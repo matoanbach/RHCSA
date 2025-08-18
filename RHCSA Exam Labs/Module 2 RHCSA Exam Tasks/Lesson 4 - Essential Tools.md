@@ -28,6 +28,37 @@ dnf repolist # to verify the work
 - Configure your local server to access this mounted disk as a repository.
 - Verify that you can install packages from this repository.
 
+### Solution
+```bash
+    lsblk
+    dd /dev/sr2 if=/rhel9.iso bs=1M 
+    dd if=/dev/sr2 of=/rhel9.iso bs=1M 
+    mkdir /repo
+    vim /etc/fstab
+    findmnt --verify
+    mount -a
+    ls /repo
+    dnf config-manager --add-repo=file:///repo/AppStream
+    dnf config-manager --add-repo=file:///repo/BaseOS
+
+   # edit AppStream.repo
+   [repo_AppStream]
+    name=created by dnf config-manager from file:///repo/AppStream
+    baseurl=file:///repo/AppStream
+    enabled=1
+    gpgcheck=0
+   # end editing
+
+   # edit BaseOS.repo
+    [repo_BaseOS]
+    name=created by dnf config-manager from file:///repo/BaseOS
+    baseurl=file:///repo/BaseOS
+    enabled=1
+    gpgcheck=0
+   # end editing
+```
+
+
 ## 4.3 Managing permissions
 ### Task: Managing Permissions
 - Create a directory with the name `/data/profs`
