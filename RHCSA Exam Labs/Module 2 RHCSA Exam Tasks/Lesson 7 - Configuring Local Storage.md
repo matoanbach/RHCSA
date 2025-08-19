@@ -93,7 +93,6 @@ lvs # to list all available lvs
 - Mount this swap persistently.
 
 - Solution:
-
 ```bash
 touch /swapfile
 dd if=/dev/zero     of=/swapfile    bs=1M   count=2024
