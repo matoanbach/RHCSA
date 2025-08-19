@@ -59,7 +59,7 @@ reboot # to verify the syntax again
 - UUIDs can be used to mount filesystems in a device-independent way.
 - The vfat filesystem doesn't support any labels.
 
-## 7.3 Managing LVL
+## 7.3 Managing LVM
 ### Task
 - On the secondary hard disk, add a 2GiB partition to be used for creating LVM logical volumes.
 - Create a volume group with the name `vglabs`, and add the partition you just created in it.
