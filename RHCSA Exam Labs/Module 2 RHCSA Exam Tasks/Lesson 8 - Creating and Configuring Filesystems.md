@@ -69,7 +69,6 @@ lvextend -r -l +5999 /dev/rhel/root
 - Also ensure that files can only deleted by the user that has created the files, as well ass user `lisa`, who is a member of the group `sales`.
 
 - Solution:
-
 ```bash
 groupadd sales
 useradd lisa -G sales
