@@ -37,7 +37,6 @@ systemctl daemon-reload
 ### Task
 - Configure your system for optimal power usage efficiency.
 - Solution:
-
 ```bash
 dnf install tuned -y
 dnf list
