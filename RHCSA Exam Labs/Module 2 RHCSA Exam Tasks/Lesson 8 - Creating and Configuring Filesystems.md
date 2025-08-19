@@ -22,7 +22,6 @@ mount -a
 - Configure `autofs` such that the `/dev/sda1` device is mounted on the directory `/start/files` when this directory is accessed.
 
 - Solution:
-
 ```bash
 dnf install autofs -y
 autofs enable --now autofs
