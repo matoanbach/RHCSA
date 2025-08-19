@@ -49,6 +49,7 @@ mount # to verify the /start is mounted on /dev/sda1
 - Add 10GiB to the logical volume on which your root filesystem is mounted.
 - Configure any additional required devices up to your discretion.
 - Solution:
+
 ```bash
 fdisk /dev/[dev name] # to create a new partition with 10 GiB more.
 vgextend rhel /dev/sda2
