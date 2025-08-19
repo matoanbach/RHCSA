@@ -11,19 +11,19 @@
 - Configure systemd such that nginx can never be started. The httpd service should be started when your server boots. Also, ensure that if the httpd process stops for unforseen reasons, it will automatically restart after 21 seconds.
 - Solution:
 
-    ```bash
-    systemctl mask nginx
-    systemctl start nginx # expect an error
+```bash
+systemctl mask nginx
+systemctl start nginx # expect an error
 
-    systemctl edit httpd
+systemctl edit httpd
 
-    # write the below to the editor:
-    [Service]
-    Restart=on-failure
-    RestartSec=21s
+# write the below to the editor:
+[Service]
+Restart=on-failure
+RestartSec=21s
 
-    systemctl daemon-reload
-    ```
+systemctl daemon-reload
+```
 
 ### Key Elements
 - Unit files in systemd can be configured with many directives.
