@@ -36,12 +36,12 @@
 
 ```bash
 # first step is to add another hard disk that is bigger than 2GiB
-fdisk /dev/sda 
+fdisk /dev/sdb 
 press g # to create an GPT type
 press n # to create a Linux Filesystem partition (compatible with vfat)
 press w # to save the configuration
 
-mkfs.vfat /dev/sda1
+mkfs.vfat /dev/sdb1
 blkid /dev/sda1 | awk '{ print $1 }' >> /etc/fstab
 vim /etc/fstab 
 # write the below
@@ -67,7 +67,6 @@ reboot # to verify the syntax again
 - Format this logical volume with the XFS filesystem.
 
 - Solution:
-
 ```bash
 fdisk /dev/sda
 press n # to create a new partition type Linux LVM (lvm as an alias)
