@@ -8,7 +8,6 @@
 ```bash
 # edit /etc/fstab
 /dev/vglabs/lvlabs      /lvlabs     xfs     defaults,noexec,noatime     0 0
-
 findmnt --verify # to verify the syntax in /etc/fstab
 mount -a
 ```
