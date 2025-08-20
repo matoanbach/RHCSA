@@ -25,6 +25,7 @@ useradd bob -G visitors
 - Ensure that the default password hashing algorithm for new users is set to `SHA256` (no need to change exisitng users).
 - Enfoce a maximum password policy validity of 120 days for new users (no need to change existing users).
 - Solution:
+
 ```bash
 usermod -L sarah
 usermod -e 2032-01-01 bob
