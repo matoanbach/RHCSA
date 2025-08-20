@@ -25,6 +25,7 @@ firewall-cmd --reload
 - Set your hostname to `examlabs.local`.
 - Ensure that this hostname is resolved to the IP address your host is using.
 - Solution:
+
 ```bash
 hostnamectl hostname examlabs.local
 hostnamectl # to verify the hostname is set
