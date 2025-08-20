@@ -22,6 +22,7 @@ MAILTO=root
 - Configure your server to fetch time from pool.ntp.org.
 - Set the timezoen on your server to Africa/Lusaka.
 - Solution:
+
 ```bash
 vim /etc/chrony.conf
 # edit the first line to:
@@ -29,7 +30,6 @@ pool pool.ntp.org ibust
 timedatectl set-timezone Africa/Lusaka
 systemctl restart chronyd
 ```
-
 ### Key Elements
 - While booting, Linux obtains its time from the hardware clock, and sets the system clock accordingly.
 - To ensure continued time synchronization, Internet time is fetched using the `chronyd` service.
