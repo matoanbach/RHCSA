@@ -4,6 +4,7 @@
 - Create users `bilal` and `bob`, and make them members of the group `visitors` as a secondary group.
 - Set password expiration for these users only to 90 days. Do NOT change the standard password expirartion.
 - Solution:
+
 ```bash
 groupadd staff
 groupadd visitors
