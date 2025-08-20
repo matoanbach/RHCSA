@@ -2,6 +2,7 @@
 ### Task
 - Configure your system such that the httpd service is accessible for external users on port 80 and 443, using its default configuration.
 - Solution:
+
 ```bash
 dnf install -y httpd
 firewall-cmd --get-services # to get all available services (those are not set up yet)
