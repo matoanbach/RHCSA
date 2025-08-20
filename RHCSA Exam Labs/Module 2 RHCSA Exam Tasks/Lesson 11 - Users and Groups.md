@@ -41,7 +41,6 @@ ENCRYPT_METHOD SHA256
 - Configure user `sarah` such that she can perform any tasks using elevated `sudo` privileges.
 - Configure user `zeina` such that she can manage user passwords, but not for user root.
 - Solution:
-
 ```bash
 usermod -aG wheel sarah # or add "sarah ALL=(ALL) ALL" to /etc/login.defs
 vim /etc/login.defs
