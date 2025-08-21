@@ -44,6 +44,7 @@ podman unshare cat /proc/self/uuid-map
 
 ## 13.3 Using Containerfile
 ### Task
+
 - In the course Git repository, you'll find the file lesson13/Containerfile. Build a container image with the name `helloworld:1.0` based on this containerfile.
 - Start this image once.
 
