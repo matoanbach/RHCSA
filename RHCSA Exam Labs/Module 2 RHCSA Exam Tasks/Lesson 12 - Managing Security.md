@@ -7,6 +7,7 @@
     - Leave user and other permissions at their default setting. 
 
 - Solution:
+
 ```bash
 mkdir /data/staff
 chown :staff /data/staff
