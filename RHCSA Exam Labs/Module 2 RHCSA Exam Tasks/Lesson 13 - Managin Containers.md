@@ -25,7 +25,6 @@ podman run -d -p 81:8080 docker.io/bitnami/nginx
     - The container can be accessed at host port 3306.
 
 - Solution
-
 ```bash
 loginctl enable-linger linda
 su - linda
