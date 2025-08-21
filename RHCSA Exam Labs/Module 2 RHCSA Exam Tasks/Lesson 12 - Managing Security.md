@@ -37,7 +37,6 @@ lsattr /data/staff/rootfile
 ```bash
 dnf install -y vsftpd
 vim /etc/vsftpd/vsftpd.conf
-
 # Edit vsftpd.conf to such:
 write_enable=YES
 ano_upload_enable=YES
