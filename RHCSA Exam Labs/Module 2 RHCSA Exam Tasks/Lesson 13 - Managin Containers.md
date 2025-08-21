@@ -3,7 +3,6 @@
 - Log in to the default Red Hat container registries.
 - Start the bitnami nginx container image in detached mode.
 - Configure access such that this container is accessible from host port 81.
-
 - Solution
 ```bash
 podman login [red hat registry] # find the right red hat registries to login
