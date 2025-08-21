@@ -91,7 +91,6 @@ ssh student@[ip addr]
 ### Task
 - Configiure the `httpd` service to listen on port 82 only.
 - Solution:
-
 ```bash
 man semanage-port
 vim /etc/httpd/conf/httpd.conf
