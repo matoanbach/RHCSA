@@ -33,7 +33,6 @@ lsattr /data/staff/rootfile
     - Open a session using `lftp localhost`
     - Use `cd pub`
     - Use `put /etc/hosts`
-
 - Solution:
 ```bash
 dnf install -y vsftpd
