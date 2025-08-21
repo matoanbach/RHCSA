@@ -44,7 +44,6 @@ podman unshare cat /proc/self/uuid-map
 
 ## 13.3 Using Containerfile
 ### Task
-
 - In the course Git repository, you'll find the file lesson13/Containerfile. Build a container image with the name `helloworld:1.0` based on this containerfile.
 - Start this image once.
 
@@ -53,7 +52,6 @@ podman unshare cat /proc/self/uuid-map
 - Create a systemd unit file that will start the `mydb` container created ealier as user `linda`.
 - The container should automatically be started when the system boots and not depend on the user login.
 - Solution:
-
 ```bash
 loginctl enable-linger linda
 loginctl get-user linda
