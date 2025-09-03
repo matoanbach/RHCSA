@@ -79,3 +79,5 @@
 29. On rhcsa1 create a logical volume called lvo2 of size 400MiB in vgo2 volume group. Mount the vfat file system persistently to /mnt/vfatfs.
 
 30. On rhcsa1 set up a web server that serves index.html that contains “hello world” out of the /webfiles directory. Make sure that rhcsa2 can access the web page using the curl command.
+
+31. Change group membership on /mnt/mnt1 to group10. Set read/write/execute permissions on /mnt/mnt1 for group members and revoke all permissions for public
