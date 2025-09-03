@@ -75,3 +75,5 @@
 27. On rhcsa1 set up a cron job for user70 to search for files by the name “core” in the /var directory and copy them to the directory /var/tmp/coredir1. This job should run every Monday at 1:20 a.m.
 
 28. On rhcsa1 create a logical volume called lvol1 of size 280MB in vgtest volume group. Mount the ext4 file system persistently to /mnt/mnt1.
+
+29. On rhcsa1 create a logical volume called lvo2 of size 400MiB in vgo2 volume group. Mount the vfat file system persistently to /mnt/vfatfs.
