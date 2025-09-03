@@ -35,3 +35,5 @@
 9. On both VMs attach the RHEL 9 ISO image to the VM and mount it persistently to /repo. Define access to both repositories and confirm.
 
 10. On both VMs, all new users should have a file named ‘CONGRATS’ in their home folder after account creation.
+
+11. On rhcsa2, all user passwords should expire after 90 days and should be at least 9 characters in length.
