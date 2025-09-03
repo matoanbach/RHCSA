@@ -95,3 +95,5 @@
 37. On rhcsa2 add a group called group20 and change group membership on /mnt/lvfs1 to group20. Set read/write/execute permissions on /mnt/lvfs1 for the owner, group members, and others.
 
 38. On rhcsa2 extend the file system in the logical volume lv1 by 64MB without unmounting it and without losing any data. Confirm the new size for the logical volume and the file system.
+
+39. On rhcsa2, create file lnfile1 under /var/tmp and create three hard links called hard1, hard2, and hard3 for it. Identify the inode number associated with all four files. Edit any of the files and observe the metadata for all the files for confirmation
