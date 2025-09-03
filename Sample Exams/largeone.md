@@ -81,3 +81,5 @@
 30. On rhcsa1 set up a web server that serves index.html that contains “hello world” out of the /webfiles directory. Make sure that rhcsa2 can access the web page using the curl command.
 
 31. Change group membership on /mnt/mnt1 to group10. Set read/write/execute permissions on /mnt/mnt1 for group members and revoke all permissions for public
+
+32. On rhcsa1, create a group called group30 with GID 3000, and add user60 and user80 to this group. Create a directory called /sdata, enable setgid bit on it, and add write permission bit for group members. Set ownership and owning group to root and group30. Create a file called file1 under /sdata as user60 and modify the file as user80 successfully.
