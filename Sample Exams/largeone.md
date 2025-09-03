@@ -31,3 +31,5 @@
 7. On rhcsa1, add HTTP port 8081/TCP to the SELinux policy database persistently.
 
 8. On rhcsa1 change the system time to the “America/New_York” timezone.
+
+9. On both VMs attach the RHEL 9 ISO image to the VM and mount it persistently to /repo. Define access to both repositories and confirm.
