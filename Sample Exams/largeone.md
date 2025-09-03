@@ -49,3 +49,5 @@
 14. On rhcsa2, Find all files that are owned by user edwin and copy them to the directory /root/edwinfiles.
 
 15. Create user bob and set this user’s shell so that this user can only change the password and cannot do anything else.
+
+16. On rhcsa1, list all files that are part of the “setup” package, and use regular expressions and I/O redirection to send the output lines containing “hosts” to /var/tmp/setup.pkg
