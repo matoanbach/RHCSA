@@ -97,3 +97,8 @@
 38. On rhcsa2 extend the file system in the logical volume lv1 by 64MB without unmounting it and without losing any data. Confirm the new size for the logical volume and the file system.
 
 39. On rhcsa2, create file lnfile1 under /var/tmp and create three hard links called hard1, hard2, and hard3 for it. Identify the inode number associated with all four files. Edit any of the files and observe the metadata for all the files for confirmation
+
+40. Create shared group directories /groups/sales and /groups/account, and make sure these groups meet the following requirements:
+    - Members of the group sales have full access to their directory.
+    - Members of the group account have full access to their directory.
+    - Users have permissions to delete only their own files, but Alex is the general manager, so user alex has access to delete all users’ files.
