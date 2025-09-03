@@ -21,3 +21,5 @@
     ```bash
     nmcli con add con-name concon ifname ens160 ipv4.addresses 192.168.182.242/24 ipv4.gateway 192.168.182.2 ipv4.method manual type ethernet
     ```
+
+4. On VM1 set the system hostname to rhcsa1.example.com and alias rhcsa1. Make sure that the new hostname is reflected in the command prompt.
