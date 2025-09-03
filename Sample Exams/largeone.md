@@ -69,3 +69,5 @@
 24. On rhcsa1, members (user100 and user200) of group100 should be able to collaborate on files under /shared but cannot delete each other’s files.
 
 25. On rhcsa1 create a user account called user70 with UID 7000 and comments “I am user70”. Set the maximum allowable inactivity for this user to 30 days.
+
+26. On rhcsa1 create a user account called user50 with a non-interactive shell.
