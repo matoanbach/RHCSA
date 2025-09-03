@@ -77,3 +77,5 @@
 28. On rhcsa1 create a logical volume called lvol1 of size 280MB in vgtest volume group. Mount the ext4 file system persistently to /mnt/mnt1.
 
 29. On rhcsa1 create a logical volume called lvo2 of size 400MiB in vgo2 volume group. Mount the vfat file system persistently to /mnt/vfatfs.
+
+30. On rhcsa1 set up a web server that serves index.html that contains “hello world” out of the /webfiles directory. Make sure that rhcsa2 can access the web page using the curl command.
