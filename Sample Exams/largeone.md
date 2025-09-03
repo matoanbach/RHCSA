@@ -14,3 +14,10 @@
 - How to verify:
     - `ping [new ip]` to make the new IP is working
     - `ping 8.8.8.8` to make sure the gateway is working
+
+3. On VM2 configure a network connection on the primary network device with IP address 192.168.0.242/24, gateway 192.168.0.1, and nameserver 192.168.0.1. Use different IP assignments based on your lab setup.
+
+- Solution:
+    ```bash
+    nmcli con add con-name concon ifname ens160 ipv4.addresses 192.168.182.242/24 ipv4.gateway 192.168.182.2 ipv4.method manual type ethernet
+    ```
