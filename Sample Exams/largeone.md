@@ -63,3 +63,5 @@
 21. On both VMs create user accounts called user10, user20, and user30. Set their passwords to Temp1234. Make user10 and user30 accounts to expire on December 31, 2025.
 
 22. On both VMs create a group called group10 and add user20 and user30 as secondary members.
+
+23. Use NFS to export home directories for all users (user100, user200, and user300) on rhcsa2 so that their home directories become available automatically under /home1 when they log on to rhcsa1. Create user100, user200, and user300. Ensure the UUIDs on both servers for these users are the same.
