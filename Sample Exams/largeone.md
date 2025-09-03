@@ -25,3 +25,5 @@
 4. On VM1 set the system hostname to rhcsa1.example.com and alias rhcsa1. Make sure that the new hostname is reflected in the command prompt.
 
 5. On VM2 set the system hostname to rhcsa2.example.com and alias rhcsa2. Make sure that the new hostname is reflected in the command prompt.
+
+6. Run “ping -c2 rhcsa2” on rhcsa1. Run “ping -c2 rhcsa1” on rhcsa2. You should see 0% loss in both outputs.
