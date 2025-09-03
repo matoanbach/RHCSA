@@ -67,3 +67,5 @@
 23. Use NFS to export home directories for all users (user100, user200, and user300) on rhcsa2 so that their home directories become available automatically under /home1 when they log on to rhcsa1. Create user100, user200, and user300. Ensure the UUIDs on both servers for these users are the same.
 
 24. On rhcsa1, members (user100 and user200) of group100 should be able to collaborate on files under /shared but cannot delete each other’s files.
+
+25. On rhcsa1 create a user account called user70 with UID 7000 and comments “I am user70”. Set the maximum allowable inactivity for this user to 30 days.
