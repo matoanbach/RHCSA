@@ -45,3 +45,5 @@
     - Members of the group accounting have full access to their directory.
     - New files that are created in the group directory are group owned by the group owner of the parent directory.
     - Others have no access to the group directories.
+
+14. On rhcsa2, Find all files that are owned by user edwin and copy them to the directory /root/edwinfiles.
