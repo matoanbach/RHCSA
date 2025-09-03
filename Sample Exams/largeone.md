@@ -39,3 +39,9 @@
 11. On rhcsa2, all user passwords should expire after 90 days and should be at least 9 characters in length.
 
 12. On rhcsa2, create users edwin and santos and make them members of the group dbadmin as a secondary group membership. Also, create users serene and alex and make them members of the group accounting as a secondary group. Ensure that user santos has UID 1234 and cannot start an interactive shell.
+
+13. On rhcsa2, create shared group directories /groups/dbadmin and /groups/accounting, and make sure the groups meet the following requirements:
+    - Members of the group dbadmin have full access to their directory.
+    - Members of the group accounting have full access to their directory.
+    - New files that are created in the group directory are group owned by the group owner of the parent directory.
+    - Others have no access to the group directories.
