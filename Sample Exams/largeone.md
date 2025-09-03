@@ -29,3 +29,5 @@
 6. Run “ping -c2 rhcsa2” on rhcsa1. Run “ping -c2 rhcsa1” on rhcsa2. You should see 0% loss in both outputs.
 
 7. On rhcsa1, add HTTP port 8081/TCP to the SELinux policy database persistently.
+
+8. On rhcsa1 change the system time to the “America/New_York” timezone.
