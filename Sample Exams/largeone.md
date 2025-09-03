@@ -85,3 +85,5 @@
 32. On rhcsa1, create a group called group30 with GID 3000, and add user60 and user80 to this group. Create a directory called /sdata, enable setgid bit on it, and add write permission bit for group members. Set ownership and owning group to root and group30. Create a file called file1 under /sdata as user60 and modify the file as user80 successfully.
 
 33. On rhcsa1, create directory /var/dir1 with full permissions for everyone. Disallow non-owners to remove files. Test by creating file /var/dir1/stkfile1 as user60 and removing it as user80.
+
+34. On rhcsa1 create a swap partition of size 200MB on the secondary disk. Use its UUID and ensure it is activated after every system reboot.
