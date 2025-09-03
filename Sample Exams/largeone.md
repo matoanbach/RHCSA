@@ -57,3 +57,5 @@
 18. Export /share1 on rhcsa1 and mount it to /share2 persistently on rhcsa2. Create a test file from each server in the directory to ensure the share is working properly.
 
 19. On rhcsa1 Perform a case-insensitive search for all lines in the /usr/share/dict/linux.words file that begin with the pattern “essential”. Redirect the output to /var/tmp/pattern.txt file. Make sure that empty lines are omitted.
+
+20. On rhcsa1 change the primary command prompt for the root user to display the hostname, username, and current working directory information in that order. Update the per-user initialization file for permanence.
