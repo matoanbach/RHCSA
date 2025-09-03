@@ -47,3 +47,5 @@
     - Others have no access to the group directories.
 
 14. On rhcsa2, Find all files that are owned by user edwin and copy them to the directory /root/edwinfiles.
+
+15. Create user bob and set this user’s shell so that this user can only change the password and cannot do anything else.
