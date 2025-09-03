@@ -87,3 +87,5 @@
 33. On rhcsa1, create directory /var/dir1 with full permissions for everyone. Disallow non-owners to remove files. Test by creating file /var/dir1/stkfile1 as user60 and removing it as user80.
 
 34. On rhcsa1 create a swap partition of size 200MB on the secondary disk. Use its UUID and ensure it is activated after every system reboot.
+
+35. On rhcsa1 create a disk partition of size 1GiB on the secondary disk and format it with Ext4 file system structures. Assign label stdlabel to the file system. Mount the file system on /mnt/stdfs1 persistently using the label. Create file stdfile1 in the mount point.
