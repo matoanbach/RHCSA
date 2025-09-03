@@ -23,3 +23,5 @@
     ```
 
 4. On VM1 set the system hostname to rhcsa1.example.com and alias rhcsa1. Make sure that the new hostname is reflected in the command prompt.
+
+5. On VM2 set the system hostname to rhcsa2.example.com and alias rhcsa2. Make sure that the new hostname is reflected in the command prompt.
