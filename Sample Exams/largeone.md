@@ -37,3 +37,5 @@
 10. On both VMs, all new users should have a file named ‘CONGRATS’ in their home folder after account creation.
 
 11. On rhcsa2, all user passwords should expire after 90 days and should be at least 9 characters in length.
+
+12. On rhcsa2, create users edwin and santos and make them members of the group dbadmin as a secondary group membership. Also, create users serene and alex and make them members of the group accounting as a secondary group. Ensure that user santos has UID 1234 and cannot start an interactive shell.
