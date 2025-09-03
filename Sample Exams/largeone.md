@@ -33,3 +33,5 @@
 8. On rhcsa1 change the system time to the “America/New_York” timezone.
 
 9. On both VMs attach the RHEL 9 ISO image to the VM and mount it persistently to /repo. Define access to both repositories and confirm.
+
+10. On both VMs, all new users should have a file named ‘CONGRATS’ in their home folder after account creation.
