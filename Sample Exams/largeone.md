@@ -59,3 +59,5 @@
 19. On rhcsa1 Perform a case-insensitive search for all lines in the /usr/share/dict/linux.words file that begin with the pattern “essential”. Redirect the output to /var/tmp/pattern.txt file. Make sure that empty lines are omitted.
 
 20. On rhcsa1 change the primary command prompt for the root user to display the hostname, username, and current working directory information in that order. Update the per-user initialization file for permanence.
+
+21. On both VMs create user accounts called user10, user20, and user30. Set their passwords to Temp1234. Make user10 and user30 accounts to expire on December 31, 2025.
