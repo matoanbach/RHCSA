@@ -53,3 +53,5 @@
 16. On rhcsa1, list all files that are part of the “setup” package, and use regular expressions and I/O redirection to send the output lines containing “hosts” to /var/tmp/setup.pkg
 
 17. On both VMs set the default boot target to multi-user.
+
+18. Export /share1 on rhcsa1 and mount it to /share2 persistently on rhcsa2. Create a test file from each server in the directory to ensure the share is working properly.
