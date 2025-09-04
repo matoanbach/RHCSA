@@ -128,3 +128,5 @@
 52. On rhcsa1, flip the value of the Boolean nfs_export_all_rw persistently.
 
 53. On rhcsa1, configure journald to store messages permanently under /var/log/journal and fall back to memory-only option if /var/log/journal directory does not exist or has permission/access issues.
+
+54. On rhcsa2 modify the bootloader program and set the default autoboot timer value to 2 seconds.
