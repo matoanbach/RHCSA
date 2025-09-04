@@ -135,3 +135,4 @@
 
 56. On rhcsa2 determine the recommended tuning profile for the system and apply it.
 
+57. On rhcsa1, set the tuning profile to powersave.
