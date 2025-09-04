@@ -102,3 +102,5 @@
     - Members of the group sales have full access to their directory.
     - Members of the group account have full access to their directory.
     - Users have permissions to delete only their own files, but Alex is the general manager, so user alex has access to delete all users’ files.
+
+41. On rhcsa2 use the combination of tar and bzip2 commands to create a compressed archive of the /usr/lib directory. Store the archive under /var/tmp as usr.tar.bz2
