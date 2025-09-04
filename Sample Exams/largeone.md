@@ -126,3 +126,5 @@
 51. On rhcsa1, set SELinux type shadow_t on a new file testfile1 in /usr and ensure that the context is not affected by a SELinux relabeling.
 
 52. On rhcsa1, flip the value of the Boolean nfs_export_all_rw persistently.
+
+53. On rhcsa1, configure journald to store messages permanently under /var/log/journal and fall back to memory-only option if /var/log/journal directory does not exist or has permission/access issues.
