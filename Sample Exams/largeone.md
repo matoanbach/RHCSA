@@ -110,3 +110,5 @@
 43. On rhcsa1, create a group sysadmins. Make users linda and anna members of this group and ensure that all members of this group can run all administrative commands using sudo.
 
 44. On rhcsa1, search for all manual pages for the description containing the keyword “password” and redirect the output to file /var/tmp/man.out.
+
+45. On rhcsa2 create a directory hierarchy /dir1/dir2/dir3/dir4 and apply SELinux contexts of /etc on it recursively.
