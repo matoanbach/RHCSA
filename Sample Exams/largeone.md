@@ -140,3 +140,5 @@
 58. On rhcsa2 write a bash shell script to create three user accounts—user555, user666, and user777—with no login shell and passwords matching their usernames. The script should also extract the three usernames from the /etc/passwd file and redirect them into /var/tmp/newusers.
 
 59. On rhcsa2 write a bash shell script so that it prints RHCSA when RHCE is passed as an argument, and vice versa. If no argument is provided, the script should print a usage message and quit with exit value 5.
+
+60. On rhcsa2, write a bash shell script that defines an environment variable called ENV1=book1 and creates a user account that matches the value of the variable.
