@@ -108,3 +108,5 @@
 42. On rhcsa1 use the tar and gzip command combination to create a compressed archive of the /etc directory. Store the archive under /var/tmp using a filename of your choice.
 
 43. On rhcsa1, create a group sysadmins. Make users linda and anna members of this group and ensure that all members of this group can run all administrative commands using sudo.
+
+44. On rhcsa1, search for all manual pages for the description containing the keyword “password” and redirect the output to file /var/tmp/man.out.
