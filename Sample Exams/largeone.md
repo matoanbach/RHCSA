@@ -122,3 +122,5 @@
 49. On both VMs allow user20 to use any sudo command without being prompted for their password.
 
 50. On rhcsa1 create a directory /direct01 and apply SELinux contexts for /root to it. Make sure this is persistent.
+
+51. On rhcsa1, set SELinux type shadow_t on a new file testfile1 in /usr and ensure that the context is not affected by a SELinux relabeling.
