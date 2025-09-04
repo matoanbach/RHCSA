@@ -118,3 +118,5 @@
 47. On rhcsa2 enable access to the atd service for user20 and deny for user30.
 
 48. On rhcsa2 add a custom message “This is RHCSA sample exam on $(date) by $LOGNAME” to the /var/log/messages file as the root user. Use regular expression to confirm the message entry to the log file and redirect the output to /root/customlogmessage.
+
+49. On both VMs allow user20 to use any sudo command without being prompted for their password.
