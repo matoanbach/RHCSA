@@ -130,3 +130,5 @@
 53. On rhcsa1, configure journald to store messages permanently under /var/log/journal and fall back to memory-only option if /var/log/journal directory does not exist or has permission/access issues.
 
 54. On rhcsa2 modify the bootloader program and set the default autoboot timer value to 2 seconds.
+
+55. On rhcsa1 boot messages should be present (not silenced).
