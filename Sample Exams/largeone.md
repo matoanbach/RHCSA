@@ -136,3 +136,5 @@
 56. On rhcsa2 determine the recommended tuning profile for the system and apply it.
 
 57. On rhcsa1, set the tuning profile to powersave.
+
+58. On rhcsa2 write a bash shell script to create three user accounts—user555, user666, and user777—with no login shell and passwords matching their usernames. The script should also extract the three usernames from the /etc/passwd file and redirect them into /var/tmp/newusers.
