@@ -114,3 +114,5 @@
 45. On rhcsa2 create a directory hierarchy /dir1/dir2/dir3/dir4 and apply SELinux contexts of /etc on it recursively.
 
 46. On rhcsa2 search for all files in the entire directory structure that have been modified in the past 30 days and save the file listing in the /var/tmp/modfiles.txt file.
+
+47. On rhcsa2 enable access to the atd service for user20 and deny for user30.
