@@ -144,3 +144,9 @@
 60. On rhcsa2, write a bash shell script that defines an environment variable called ENV1=book1 and creates a user account that matches the value of the variable.
 
 61. On rhcsa2, write a bash shell script that checks for the existence of files (not directories) under the /usr/bin directory that begin with the letters “ac” and display their statistics (the stat command).
+
+62. On rhcsa2, write a bash shell script named ‘yes-no.sh’ that does the following:
+    - If the argument passed in is 'yes', the script should print “that's nice”.
+    - If the argument passed in is 'no', the script should print "I am sorry to hear that".
+    - If the argument passed in is anything else, the script print "unknown argument provided".
+
