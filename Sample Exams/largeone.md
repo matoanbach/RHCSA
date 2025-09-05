@@ -157,3 +157,5 @@
 65. On rhcsa1 lock user account user70. Use regular expressions to capture the line that shows the lock and store the output in file /var/tmp/user70.lock.
 
 66. Configure passwordless ssh access for user100 from rhcsa1 to rhcsa2. Copy the directory /etc/sysconfig from rhcsa1 to rhcsa2 under /var/tmp/remote securely.
+
+67. On rhcsa1, add HTTP port 8400/UDP to the public firewall zone persistently.
