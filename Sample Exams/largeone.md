@@ -151,3 +151,5 @@
     - If the argument passed in is anything else, the script print "unknown argument provided".
 
 63. On rhcsa1 configure Chrony to synchronize system time with the hardware clock. Remove all other NTP sources.
+
+64. On rhcsa1 Install package group called “Development Tools” and capture its information in /var/tmp/systemtools.out file.
