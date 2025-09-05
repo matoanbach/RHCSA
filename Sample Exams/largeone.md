@@ -159,3 +159,5 @@
 66. Configure passwordless ssh access for user100 from rhcsa1 to rhcsa2. Copy the directory /etc/sysconfig from rhcsa1 to rhcsa2 under /var/tmp/remote securely.
 
 67. On rhcsa1, add HTTP port 8400/UDP to the public firewall zone persistently.
+
+68. On rhcsa1, add the http service to “external” firewalld zone persistently.
