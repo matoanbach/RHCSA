@@ -155,3 +155,5 @@
 64. On rhcsa1 Install package group called “Development Tools” and capture its information in /var/tmp/systemtools.out file.
 
 65. On rhcsa1 lock user account user70. Use regular expressions to capture the line that shows the lock and store the output in file /var/tmp/user70.lock.
+
+66. Configure passwordless ssh access for user100 from rhcsa1 to rhcsa2. Copy the directory /etc/sysconfig from rhcsa1 to rhcsa2 under /var/tmp/remote securely.
