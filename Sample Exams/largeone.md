@@ -142,3 +142,5 @@
 59. On rhcsa2 write a bash shell script so that it prints RHCSA when RHCE is passed as an argument, and vice versa. If no argument is provided, the script should print a usage message and quit with exit value 5.
 
 60. On rhcsa2, write a bash shell script that defines an environment variable called ENV1=book1 and creates a user account that matches the value of the variable.
+
+61. On rhcsa2, write a bash shell script that checks for the existence of files (not directories) under the /usr/bin directory that begin with the letters “ac” and display their statistics (the stat command).
