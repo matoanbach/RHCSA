@@ -161,3 +161,5 @@
 67. On rhcsa1, add HTTP port 8400/UDP to the public firewall zone persistently.
 
 68. On rhcsa1, add the http service to “external” firewalld zone persistently.
+
+69. On rhcsa1 launch a container as user20 using the latest version of ubi8 image. Configure the container to auto-start at system reboots without the need for user20 to log in.
