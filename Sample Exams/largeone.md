@@ -150,3 +150,4 @@
     - If the argument passed in is 'no', the script should print "I am sorry to hear that".
     - If the argument passed in is anything else, the script print "unknown argument provided".
 
+63. On rhcsa1 configure Chrony to synchronize system time with the hardware clock. Remove all other NTP sources.
