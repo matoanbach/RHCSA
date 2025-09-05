@@ -153,3 +153,5 @@
 63. On rhcsa1 configure Chrony to synchronize system time with the hardware clock. Remove all other NTP sources.
 
 64. On rhcsa1 Install package group called “Development Tools” and capture its information in /var/tmp/systemtools.out file.
+
+65. On rhcsa1 lock user account user70. Use regular expressions to capture the line that shows the lock and store the output in file /var/tmp/user70.lock.
