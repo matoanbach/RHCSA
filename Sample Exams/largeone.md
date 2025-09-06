@@ -177,3 +177,7 @@
     - It is configured to use the mysql root password password.
     - It bind mounts the host directory /home/santos/mysql to the container directory /var/lib/mysql.
     - It automatically starts through a systemd job, where it is not needed for user santos to log in.
+
+75. On rhcsa2, configure SSH so that it meets the following requirements:
+    - User root is allowed to connect through SSH.
+    - The server offers services on port 2022.
