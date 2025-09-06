@@ -189,3 +189,5 @@
 ### Bonus Shell Scripting Prompts
 
 1. Write a bash shell script that creates three user accounts—user101, user202, and user303—with a primary group of developers. If the group does not exist, the script should create it before adding users. The script should also validate that each user was successfully created by checking the /etc/passwd file and logging the results to /var/tmp/user_creation.log
+
+2. Write a bash shell script that finds all .conf files under /etc modified within the last 7 days and archives them into /var/tmp/conf_backup.tar.gz. The script should log the number of files backed up and the archive size in /var/tmp/backup.log
