@@ -165,3 +165,5 @@
 69. On rhcsa1 launch a container as user20 using the latest version of ubi8 image. Configure the container to auto-start at system reboots without the need for user20 to log in.
 
 70. On rhcsa1 launch a container as user20 using the latest version of ubi9 image with two environment variables SHELL and HOSTNAME. Configure the container to auto-start via systemd without the need for user20 to log in. Connect to the container and verify variable settings.
+
+71. On rhcsa1, launch a named rootless container as user100 with /data01 mapped to /data01 and two variables KERN=$(uname -r) and SHELL defined. Use the latest version of the ubi8 image. Configure a systemd service to auto-start the container at system reboots without the need for user100 to log in. Create a file under the shared mount point and validate data persistence. Verify port mapping using an appropriate podman subcommand.
