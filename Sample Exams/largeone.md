@@ -195,3 +195,5 @@
 3. Write a bash shell script that takes a service name as an argument and checks whether it is active. If the service is running, print "Service <name> is running". If it is inactive or does not exist, print "Service <name> is not running". If no argument is provided, print a usage message and exit with status 2.
 
 4. Write a bash shell script that checks disk usage on the /home directory. If usage exceeds 80%, append a warning message to /var/log/homedir_usage.log with the timestamp and current usage percentage. Otherwise, append a normal status message with the current usage.
+
+5. Write a bash shell script that finds all files in /var/log owned by root that have write permissions for others (o+w) and removes that permission while logging the changes to /var/tmp/permissions_fixed.log.
