@@ -183,3 +183,5 @@
     - The server offers services on port 2022.
 
 76. On rhcsa2, configure your system to automatically start a mariadb container as user edwin. This container should expose its services at port 3306 and use the directory /var/mariadb-container on the host for persistent storage of files it writes to the /var directory.
+
+77. Configure your system such that the container created in the step before is automatically started as a Systemd user container.
