@@ -193,3 +193,5 @@
 2. Write a bash shell script that finds all .conf files under /etc modified within the last 7 days and archives them into /var/tmp/conf_backup.tar.gz. The script should log the number of files backed up and the archive size in /var/tmp/backup.log
 
 3. Write a bash shell script that takes a service name as an argument and checks whether it is active. If the service is running, print "Service <name> is running". If it is inactive or does not exist, print "Service <name> is not running". If no argument is provided, print a usage message and exit with status 2.
+
+4. Write a bash shell script that checks disk usage on the /home directory. If usage exceeds 80%, append a warning message to /var/log/homedir_usage.log with the timestamp and current usage percentage. Otherwise, append a normal status message with the current usage.
