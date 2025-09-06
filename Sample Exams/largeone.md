@@ -181,3 +181,5 @@
 75. On rhcsa2, configure SSH so that it meets the following requirements:
     - User root is allowed to connect through SSH.
     - The server offers services on port 2022.
+
+76. On rhcsa2, configure your system to automatically start a mariadb container as user edwin. This container should expose its services at port 3306 and use the directory /var/mariadb-container on the host for persistent storage of files it writes to the /var directory.
