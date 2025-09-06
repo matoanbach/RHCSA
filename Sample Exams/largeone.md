@@ -185,3 +185,7 @@
 76. On rhcsa2, configure your system to automatically start a mariadb container as user edwin. This container should expose its services at port 3306 and use the directory /var/mariadb-container on the host for persistent storage of files it writes to the /var directory.
 
 77. Configure your system such that the container created in the step before is automatically started as a Systemd user container.
+
+### Bonus Shell Scripting Prompts
+
+1. Write a bash shell script that creates three user accounts—user101, user202, and user303—with a primary group of developers. If the group does not exist, the script should create it before adding users. The script should also validate that each user was successfully created by checking the /etc/passwd file and logging the results to /var/tmp/user_creation.log
