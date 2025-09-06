@@ -171,3 +171,9 @@
 72. On rhcsa2 launch a named rootful container with host port 443 mapped to container port 443. Employ the latest version of the ubi9 image. Configure a systemd service to auto-start the container at system reboots. Validate port mapping using an appropriate podman subcommand.
 
 73. On rhcsa2 launch a rootless container as user80 with /data01 mapped to /data01 using the latest version of the ubi9 image. Configure a systemd service to auto-start the container on system reboots without the need for user80 to log in. Create files under the shared mount point and validate data persistence.
+
+74. On rhcsa2, configure a container that runs the mysql:latest image and ensure it meets the following conditions
+    - It runs as a rootless container in the user santos account.
+    - It is configured to use the mysql root password password.
+    - It bind mounts the host directory /home/santos/mysql to the container directory /var/lib/mysql.
+    - It automatically starts through a systemd job, where it is not needed for user santos to log in.
