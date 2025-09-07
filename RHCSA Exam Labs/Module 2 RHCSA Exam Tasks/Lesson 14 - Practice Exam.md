@@ -21,3 +21,13 @@
 - Run the command `sleep infinity` with adjusted priority. Make sure it meets the following requirements:
     - It should get the lowest priority that can be set.
     - It should automatically be started as a background job when the user `student` logs in.
+
+## Task 5: Configuring Parititions
+- On the secondary hard disk, create a primary partition that meets the following requirements:
+    - The GPT partitionong scheme is used.
+    - The partition has a size of 2 GiB
+    - After creation, it will be listed as the first partition.
+
+- On the secondary hard disk, create another partition that meets the following requirements:
+    - The size is 5GiB.
+    - The partition type is set to `lvm`.
