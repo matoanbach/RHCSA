@@ -45,3 +45,10 @@
 
 - Use `/etc/fstab` for the persistent mounting, do NOT use systemd mounts.
 - Use the systemd mount that is provided by a default installation to mount the `/tmp` directory persistently using the tmpfs driver. This mount should not be seen in `/etc/fstab`.
+
+## Task 8: Deploying, Configuring, and Maintaining Systems
+- Create a simple systemd unit with the name `sleep.service`. Make sure it meets the following requirements:
+    - It runs the `sleep 3600` command.
+    - The unit is stored in the appropriate location for adminstrator-created unit files.
+    - The unit is automatically started in `multi-user.target`
+    - If it stops for any reason, it will automatically restart.
