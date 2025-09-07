@@ -52,3 +52,8 @@
     - The unit is stored in the appropriate location for adminstrator-created unit files.
     - The unit is automatically started in `multi-user.target`
     - If it stops for any reason, it will automatically restart.
+
+## Task 9: Managing Basic Networking
+- Set the hostname of your test machine to `examlabs.example.com`
+- Install and enable the `httpd` service using default configuration.
+- Ensure that the firewall allows non-secured access to the httpd service.
