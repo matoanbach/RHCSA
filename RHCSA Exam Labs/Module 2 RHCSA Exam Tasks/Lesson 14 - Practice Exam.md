@@ -80,3 +80,8 @@
         </Directory>
         ```
     - Verify that the content is served from the non-default DocumentRoot.
+
+## Task 12: Building Containers from a Containerfile
+- Ensure you have access to the course Git repository at `https:/github.com/sandervanvugt/rhcsa-labs`
+- Build a container image with the name `greeter` based on the Containerfile you'll find in the course Git repository.
+- Run this image as a container with the name `sleeper`.
