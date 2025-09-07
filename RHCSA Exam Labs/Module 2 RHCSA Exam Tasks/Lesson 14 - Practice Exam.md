@@ -37,3 +37,11 @@
     - A volume with the name `vglabs` is created and uses the LVM partition that was created in the previous taks.
     - The volume group uses a physical extent size of 2MiB.
     - A logical volume with the name `lvlabs` is created. It uses `50%` of disk space available in the volume group.
+
+## Task 7: Managing Filesystems
+- Create and mount filesystems on the previously create devices, meeting the following requirements:
+    - The partition uses the XFS filesystem. It is mounted persistently by using its UUID on the directory `/data`
+    - The logical volume uses the Ext4 filesystem and is mounted persistently on the directory `/files`
+
+- Use `/etc/fstab` for the persistent mounting, do NOT use systemd mounts.
+- Use the systemd mount that is provided by a default installation to mount the `/tmp` directory persistently using the tmpfs driver. This mount should not be seen in `/etc/fstab`.
