@@ -31,3 +31,9 @@
 - On the secondary hard disk, create another partition that meets the following requirements:
     - The size is 5GiB.
     - The partition type is set to `lvm`.
+
+## Task 6: Configuring LVM
+- Create an LVM setup that meets the following requirements:
+    - A volume with the name `vglabs` is created and uses the LVM partition that was created in the previous taks.
+    - The volume group uses a physical extent size of 2MiB.
+    - A logical volume with the name `lvlabs` is created. It uses `50%` of disk space available in the volume group.
