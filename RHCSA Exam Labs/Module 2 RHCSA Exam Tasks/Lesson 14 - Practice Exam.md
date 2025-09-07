@@ -66,3 +66,17 @@
 - Create the groups `profs` and `students`, and make users `anna` and `anouk` members of `profs`, `lisa` and `linda` members of `students`.
 - Create a shared group directory structure `/data/profs` and `/data/students` that meets the following condition:
     - Members of the groups have full access and write access to ther directories, other have no permissions at all.
+
+## Task 11: Managing Security
+- Configure the httpd service to meet the following requirements:
+    - The DocumentRoot in `/etc/httpd/conf/httpd.conf` is set to `/web`.
+    - Create a file `/web/index.html` that contains the text `hello from /web`.
+    - Include the following in `/etc/httpd/conf/httpd.conf` to configure Apache to allow access to the non-default DocumentRoot:
+        ```yaml
+        <Directory "/web">
+            AllowOverride None
+            # Allow open access:
+            Require all granted
+        </Directory>
+        ```
+    - Verify that the content is served from the non-default DocumentRoot.
