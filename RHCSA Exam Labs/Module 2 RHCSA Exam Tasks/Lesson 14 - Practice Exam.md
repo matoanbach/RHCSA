@@ -94,3 +94,7 @@
     - The database root password should be set to `password`.
     - The container uses the name `mydb`
     - A bind-mounted directory is accessible: the directory `/home/student/mariadb` on the host must be mapped to `/var/lib/mysql` in the container.
+
+## Task 14: Configuring Containers to Automatically Start
+- Configure the container `mydb` that was created in the previous task to automatically be started by systemd when your system boots.
+- Ensure that the container will also be started if the user `student` does NOT log in after the systemd has been started.
