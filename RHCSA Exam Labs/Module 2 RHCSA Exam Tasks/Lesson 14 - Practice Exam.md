@@ -57,3 +57,12 @@
 - Set the hostname of your test machine to `examlabs.example.com`
 - Install and enable the `httpd` service using default configuration.
 - Ensure that the firewall allows non-secured access to the httpd service.
+
+## Task 10: Managing Users and Groups
+- Make sure that new users require a password with a maximal validity of 90 days.
+- Ensure that while creating users, an empty file with the name `newfile` is created to their home directory.
+- Create users `anna`, `anouk`, `linda`, and `lisa`.
+- Set the password for all users to `password`.
+- Create the groups `profs` and `students`, and make users `anna` and `anouk` members of `profs`, `lisa` and `linda` members of `students`.
+- Create a shared group directory structure `/data/profs` and `/data/students` that meets the following condition:
+    - Members of the groups have full access and write access to ther directories, other have no permissions at all.
