@@ -85,3 +85,12 @@
 - Ensure you have access to the course Git repository at `https:/github.com/sandervanvugt/rhcsa-labs`
 - Build a container image with the name `greeter` based on the Containerfile you'll find in the course Git repository.
 - Run this image as a container with the name `sleeper`.
+
+## Task 13: Managing Containers
+- Ensure that you have full access to the Red Hat container repositories.
+- Run a Mariadb container, based on the `registry.redhat.io/rhel9/mariadb-105`, which meets the following conditions:
+    - The container is started as a rootless container by user `student`
+    - The container must be accessible at host port `3206`
+    - The database root password should be set to `password`.
+    - The container uses the name `mydb`
+    - A bind-mounted directory is accessible: the directory `/home/student/mariadb` on the host must be mapped to `/var/lib/mysql` in the container.
